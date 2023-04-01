@@ -1,1 +1,1 @@
-BulletTrain::Themes::Light.color = :blue
+BulletTrain::Themes::Light.color = :emerald
