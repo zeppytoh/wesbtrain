@@ -1,0 +1,114 @@
+en:
+  songs: &songs
+    label: &label Songs
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-music
+    buttons: &buttons
+      new: Add New Song
+      create: Create Song
+      edit: Edit Song
+      update: Update Song
+      destroy: Remove Song
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{song_name}? This will also remove any child resources and can't be undone.
+    fields: &fields
+      id:
+        heading: Song ID
+      team_id:
+        heading: Team ID
+      title:
+        _: &title Title
+        label: *title
+        heading: *title
+      key:
+        _: &key Key
+        label: *key
+        heading: *key
+        placeholder: None
+        options:
+          one: One
+          two: Two
+          three: Three
+      author:
+        _: &author Author
+        label: *author
+        heading: *author
+      body:
+        _: &body Body
+        label: *body
+        heading: *body
+      video_url:
+        _: &video_url Video Url
+        label: *video_url
+        heading: *video_url
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Songs"
+      index: "List Songs"
+      create: "Add a New Song"
+      member_actions: "Actions for an Individual Song"
+      show: "Retrieve a Song"
+      update: "Update a Song"
+      destroy: "Delete a Song"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Songs"
+      contexts:
+        team:
+          header: Songs
+          description: Below is a list of Songs that have been added for %{team_name}.
+          description_empty: No Songs have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{song_name}"
+      header: Song Details
+      description: Below are the details we have for %{song_name}.
+      manage_description: You'll also find options for updating these details or removing %{song_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Song for %{team_name}"
+      header: New Song Details
+      description: Please provide the details of the new Song you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{song_name}"
+      header: Edit Song Details
+      description: You can update the details or settings for %{song_name} below.
+      form: *form
+    notifications:
+      created: Song was successfully created.
+      updated: Song was successfully updated.
+      destroyed: Song was successfully destroyed.
+  account:
+    songs: *songs
+  activerecord:
+    attributes:
+      song:
+        title: *title
+        key: *key
+        author: *author
+        body: *body
+        video_url: *video_url
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
