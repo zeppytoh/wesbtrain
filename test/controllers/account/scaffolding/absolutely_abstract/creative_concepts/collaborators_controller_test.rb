@@ -3,6 +3,7 @@ require "test_helper"
 class Account::Scaffolding::AbsolutelyAbstract::CreativeConcepts::CollaboratorsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
+  unless scaffolding_things_disabled?
   def setup
     super
     @user = create(:onboarded_user)
@@ -63,5 +64,6 @@ class Account::Scaffolding::AbsolutelyAbstract::CreativeConcepts::CollaboratorsC
     end
 
     assert_redirected_to url_for([:account, @creative_concept, :collaborators])
+  end
   end
 end
