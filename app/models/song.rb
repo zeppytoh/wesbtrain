@@ -1,24 +1,29 @@
-class Team < ApplicationRecord
-  include Teams::Base
-  include Webhooks::Outgoing::TeamSupport
+class Song < ApplicationRecord
+  include Sortable
   # 🚅 add concerns above.
 
+  # 🚅 add attribute accessors above.
+
+  belongs_to :team
   # 🚅 add belongs_to associations above.
 
-  has_many :songs, dependent: :destroy
   # 🚅 add has_many associations above.
-
-  # 🚅 add oauth providers above.
 
   # 🚅 add has_one associations above.
 
   # 🚅 add scopes above.
 
+  validates :title, presence: true
+  validates :body, presence: true, length: {minimum: 20, maximum: 1500}
   # 🚅 add validations above.
 
   # 🚅 add callbacks above.
 
   # 🚅 add delegations above.
+
+  def collection
+    team.songs
+  end
 
   # 🚅 add methods above.
 end

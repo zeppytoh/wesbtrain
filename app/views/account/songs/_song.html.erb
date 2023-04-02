@@ -1,0 +1,27 @@
+<% team = @team || @team %>
+<% context ||= team %>
+<% collection ||= :songs %>
+<% hide_actions ||= false %>
+<% hide_back ||= false %>
+
+<% with_attribute_settings object: song do %>
+  <tr data-id="<%= song.id %>">
+    <%= render "shared/tables/checkbox", object: song %>
+    <td><%= render 'shared/attributes/text', attribute: :title, url: [:account, song] %></td>
+    <td><%= render 'shared/attributes/option', attribute: :key %></td>
+    <td><%= render 'shared/attributes/text', attribute: :author %></td>
+    <%# 🚅 super scaffolding will insert new fields above this line. %>
+    <td><%= render 'shared/attributes/date_and_time', attribute: :created_at %></td>
+    <td class="buttons">
+      <% unless hide_actions %>
+        <% if can? :edit, song %>
+          <%= link_to t('.buttons.shorthand.edit'), [:edit, :account, song], class: 'button-secondary button-smaller' %>
+        <% end %>
+        <% if can? :destroy, song %>
+          <%= button_to t('.buttons.shorthand.destroy'), [:account, song], method: :delete, data: { confirm: t('.buttons.confirmations.destroy', model_locales(song)) }, class: 'button-secondary button-smaller' %>
+        <% end %>
+        <%# 🚅 super scaffolding will insert new action model buttons above this line. %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

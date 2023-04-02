@@ -1,0 +1,8 @@
+<% song ||= @song %>
+<% team ||= @team || song&.team %>
+<%= render 'account/teams/breadcrumbs', team: team %>
+<%= render 'account/shared/breadcrumb', label: t('.label'), url: [:account, team, :songs] %>
+<% if song&.persisted? %>
+  <%= render 'account/shared/breadcrumb', label: song.label_string, url: [:account, song] %>
+<% end %>
+<%= render 'account/shared/breadcrumbs/actions', only_for: 'songs' %>

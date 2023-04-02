@@ -12,3 +12,5 @@ en:
         options:
           1: V1
           # 🚅 super scaffolding will insert new api versions above this line.
+  global:
+    optional: (Optional)
