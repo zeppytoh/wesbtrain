@@ -33,9 +33,18 @@ en:
         heading: *key
         placeholder: None
         options:
-          one: One
-          two: Two
-          three: Three
+          c: C
+          c_sharp: C♯
+          d: D
+          d_sharp: D♯
+          e: E
+          f: F
+          f_sharp: F♯
+          g: G
+          g_sharp: G♯
+          a: A
+          a_sharp: A♯
+          b: B
       author:
         _: &author Author
         label: *author
