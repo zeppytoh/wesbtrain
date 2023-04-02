@@ -21,11 +21,11 @@ class Api::V1::SongsControllerTest < Api::Test
     # Fetch the song in question and prepare to compare it's attributes.
     song = Song.find(song_data["id"])
 
-    assert_equal_or_nil song_data['title'], song.title
-    assert_equal_or_nil song_data['key'], song.key
-    assert_equal_or_nil song_data['author'], song.author
-    assert_equal_or_nil song_data['body'], song.body
-    assert_equal_or_nil song_data['video_url'], song.video_url
+    assert_equal_or_nil song_data["title"], song.title
+    assert_equal_or_nil song_data["key"], song.key
+    assert_equal_or_nil song_data["author"], song.author
+    assert_equal_or_nil song_data["body"], song.body
+    assert_equal_or_nil song_data["video_url"], song.video_url
     # 🚅 super scaffolding will insert new fields above this line.
 
     assert_equal song_data["team_id"], song.team_id
@@ -84,10 +84,10 @@ class Api::V1::SongsControllerTest < Api::Test
     put "/api/v1/songs/#{@song.id}", params: {
       access_token: access_token,
       song: {
-        title: 'Alternative String Value',
-        author: 'Alternative String Value',
-        body: 'Alternative String Value',
-        video_url: 'Alternative String Value',
+        title: "Alternative String Value",
+        author: "Alternative String Value",
+        body: "Alternative String Value",
+        video_url: "Alternative String Value",
         # 🚅 super scaffolding will also insert new fields above this line.
       }
     }
@@ -99,10 +99,10 @@ class Api::V1::SongsControllerTest < Api::Test
 
     # But we have to manually assert the value was properly updated.
     @song.reload
-    assert_equal @song.title, 'Alternative String Value'
-    assert_equal @song.author, 'Alternative String Value'
-    assert_equal @song.body, 'Alternative String Value'
-    assert_equal @song.video_url, 'Alternative String Value'
+    assert_equal @song.title, "Alternative String Value"
+    assert_equal @song.author, "Alternative String Value"
+    assert_equal @song.body, "Alternative String Value"
+    assert_equal @song.video_url, "Alternative String Value"
     # 🚅 super scaffolding will additionally insert new fields above this line.
 
     # Also ensure we can't do that same action as another user.

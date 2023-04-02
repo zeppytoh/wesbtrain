@@ -14,7 +14,7 @@ class Song < ApplicationRecord
   # 🚅 add scopes above.
 
   validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 20, maximum: 1500 }
+  validates :body, presence: true, length: {minimum: 20, maximum: 1500}
   # 🚅 add validations above.
 
   # 🚅 add callbacks above.
