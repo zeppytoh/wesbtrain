@@ -12,9 +12,23 @@
         <% box.body do %>
           <% with_attribute_settings object: @song, strategy: :label do %>
             <%= render 'shared/attributes/text', attribute: :title %>
-            <%= render 'shared/attributes/option', attribute: :key %>
             <%= render 'shared/attributes/text', attribute: :author %>
-            <%= render 'shared/attributes/text', attribute: :body %>
+
+            <!-- キーのselectと変調するロジックとの紐付け -->
+            <div data-controller="key-change"
+                 data-key-change-original-key-value="<%= @song.original_key %>"
+                 data-key-change-original-song-body-value="<%= @song.body %>">
+              <%= select_tag(:key,
+                options_for_select(@song.all_keys.values, @song.original_key),
+                "data-key-change-target": "keySelect" ,
+                "data-action": "change->key-change#changeKey")
+              %>
+              <div data-key-change-target="songBodyContainer">
+                <%# TODO: スタイルシートに入れた方がいい。 %>
+                <div style="white-space: pre !important;"><%= @song.body %></div>
+              </div>
+            </div>
+
             <%= render 'shared/attributes/text', attribute: :video_url %>
             <%# 🚅 super scaffolding will insert new fields above this line. %>
           <% end %>

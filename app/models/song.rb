@@ -25,5 +25,13 @@ class Song < ApplicationRecord
     team.songs
   end
 
+  # データベースではkeyはc_sharpとかになっているのでC♯などを表示したい時はこれを使う。
+  def original_key
+    all_keys.dig(key.to_sym)
+  end
+
+  def all_keys
+    I18n.t('.songs.fields.key.options')
+  end
   # 🚅 add methods above.
 end
