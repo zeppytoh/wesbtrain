@@ -240,6 +240,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     devise-pwned_password (0.1.9)
       devise (~> 4)
       pwned (~> 2.0.0)
@@ -336,7 +338,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitest (5.18.0)
     minitest-retry (0.2.2)
       minitest (>= 5.0)
@@ -355,10 +356,9 @@ GEM
     nice_partials (0.9.3)
       actionview (>= 4.2.6)
     nio4r (2.5.8)
-    nokogiri (1.14.2)
-      mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
     nokogiri (1.14.2-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
@@ -592,7 +592,7 @@ GEM
 PLATFORMS
   arm64-darwin-21
   arm64-darwin-22
-  ruby
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -618,6 +618,7 @@ DEPENDENCIES
   cssbundling-rails
   debug (= 1.7.2)
   devise
+  devise-i18n
   devise-two-factor
   factory_bot_rails
   foreman

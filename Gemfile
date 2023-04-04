@@ -113,6 +113,7 @@ gem "bullet_train-scope_questions"
 gem "bullet_train-obfuscates_id"
 
 gem "devise"
+gem "devise-i18n"
 gem "devise-two-factor"
 gem "rqrcode"
 
