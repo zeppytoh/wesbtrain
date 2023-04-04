@@ -31,7 +31,7 @@ class Song < ApplicationRecord
   end
 
   def all_keys
-    I18n.t('.songs.fields.key.options')
+    I18n.t(".songs.fields.key.options")
   end
   # 🚅 add methods above.
 end
