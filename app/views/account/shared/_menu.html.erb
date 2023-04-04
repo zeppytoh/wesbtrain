@@ -20,10 +20,11 @@
     <% end %>
   <% end %>
 
-  <%= render 'account/shared/menu/subsection', title: t('menus.main.labels.developers'), expand: expand do %>
-    <%= render 'account/platform/applications/menu_item' %>
-    <%= render 'account/webhooks/outgoing/endpoints/menu_item' if webhooks_enabled? %>
-  <% end %>
+  <%# TODO: 使わないと思うけど、念のためにコメント・アウトする。 %>
+  <%#= render 'account/shared/menu/subsection', title: t('menus.main.labels.developers'), expand: expand do %>
+    <%#= render 'account/platform/applications/menu_item' %>
+    <%#= render 'account/webhooks/outgoing/endpoints/menu_item' if webhooks_enabled? %>
+  <%# end %>
 
   <%= render 'account/shared/menu/subsection', title: t('menus.main.labels.team'), expand: expand do %>
     <%= render 'account/shared/menu/item', url: main_app.edit_account_team_path(current_team), label: t('menus.main.labels.team_settings') do |p| %>

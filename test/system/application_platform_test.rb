@@ -16,6 +16,8 @@ class ApplicationPlatformSystemTest < ApplicationSystemTestCase
 
   @@test_devices.each do |device_name, display_details|
     test "visitors can sign-up and manage team members with subscriptions #{billing_enabled? ? "enabled" : "disabled"} on a #{device_name}" do
+      skip "現在、開発者向けのツールを使ってないためこちらのテストをスキップします。"
+
       resize_for(display_details)
 
       be_invited_to_sign_up

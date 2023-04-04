@@ -14,6 +14,8 @@ class WebhooksSystemTest < ApplicationSystemTestCase
   unless scaffolding_things_disabled?
     @@test_devices.each do |device_name, display_details|
       test "team member registers for webhooks and then receives them on #{device_name}" do
+        skip "現在、開発者向けのツールを使ってないためこちらのテストをスキップします。"
+
         resize_for(display_details)
         login_as(@user, scope: :user)
         visit account_dashboard_path
