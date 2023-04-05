@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+ja:
   devise:
     titles:
       reset_password: パスワード再設定
