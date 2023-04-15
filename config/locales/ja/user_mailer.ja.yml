@@ -2,33 +2,33 @@ ja:
   user_mailer:
     signature: &SIGNATURE
       html:
-        <p>If you have any questions, please don't hesitate to <a href="mailto:%{support_email}">send us an email</a>.</p>
-        <p>Thanks,<br>The We Sanbi Team</p>
+        <p>ご不明な点やご質問がございましたら、<a href="mailto:%{support_email}">こちらのメールにお問合せください</a>。</p>
+        <p>We Sanbiより</p>
     invited:
-      subject: Invitation to join %{team_name} on We Sanbi!
-      preview: '%{inviter_name} has sent you this invitation.'
-      heading: You're invited!
+      subject: We Sanbiで%{team_name}さんからの招待状が届いています！
+      preview: '%{inviter_name}さんがあなたを招待しました。'
+      heading: 招待状が届いています！
       body:
         html:
           <p>
-            %{inviter_name} has invited you to join %{team_name} on We Sanbi.
-            You can join %{team_name} by clicking the button below.
+            We Sanbi%{team_name}で%{inviter_name}さんからの招待状が届きました。
+            こちらのボタンをクリックして%{team_name}に参加しましょう。
           </p>
       cta:
-        label: Join %{team_name}
+        label: %{team_name}に参加する
       signature:
         <<: *SIGNATURE
     welcome:
-      subject: Welcome to We Sanbi!
-      preview: This email contains details on how to get started using your account.
-      heading: Welcome to We Sanbi!
+      subject: We Sanbiへようこそ！
+      preview: このメールではWeSanbiの使い方を説明いたします。
+      heading: We Sanbiへようこそ！
       body:
         html:
-          <p>This is the default welcome email! The content of this welcome email can be updated in `config/locales/en/user_mailer.en.yml`.</p>
-          <p>Thanks to the team at <a href="https://postmarkapp.com">Postmark</a> for making the original foundation for this email template <a href="https://github.com/wildbit/postmark-templates">freely available</a>.</p>
+          <p></p>
+          <p></p>
       cta:
-        heading: What's next?
-        body: You can use the following link to return to your account dashboard.
-        label: View Your Account Dashboard
+        heading: 次は？
+        body: こちらのリンクをクリックするとダッシュボードに移ります。
+        label: あなたのダッシュボード
       signature:
         <<: *SIGNATURE
