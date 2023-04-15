@@ -1,0 +1,135 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+ja:
+  bullet_train:
+    name: Bullet Train
+    tagline: Ruby on Rails上で動くSaaSのテンプレート
+    description: Bullet Trainとは開発の家庭を何週間も短くしてくれる、Ruby on Rails上で動くSaaS-in-a-Boxです。
+    keywords: bullet train ruby on rails saas template starter kit
+    support_email: ask@bullettrain.co
+  global:
+    or: または
+    more: もっと
+    is_admin: 管理者？
+    person: 人
+    admin: 管理者
+    confirm_message: 本当によろしいですか？
+    typing_search: 検索事項を入力してください
+    sidebar: サイドバー
+    creator: Bullet Train(株)
+    buttons:
+      other: その他
+      debug: デバック
+      details: 詳細
+      revoke: 取り消す
+      cancel: キャンセル
+      next: 次
+      back: 戻る
+      new: 新規
+      edit: 編集
+      settings: 設定
+      configure: 設定する
+      remove: 外す
+      delete: 削除する
+      update: 更新
+      sign_up: アカウント登録
+      sign_in: ログイン
+    notifications:
+      not_found: 見つかりませんでした
+      all_fields_required: この項目は全部必須項目です。
+    dates:
+      today: 今日
+      day:
+        one: 1日
+        other: '%{count}日'
+      last_month: 先月
+      last_week: 先週
+      last_day:
+        one: この間
+        other: この間の%{count}日
+    formats:
+      timestamp_unavailable: 未設定
+      date: '%m/%d/%Y'
+      date_and_time: '%m/%d/%Y %l:%M %p'
+
+  menus:
+    main:
+      labels:
+        account: アカウント
+        new: 新規
+        profile_details: プロフィールの詳細
+        logout: ログアウト
+        skip: スキップする
+        dashboard: ダッシュボード
+        team_members: チームのメンバー
+        webhooks: ウェブフック
+        invitations: 招待状
+        billing: Billing
+        upgrade: アプグレード
+        switch_teams: チームの変更
+        add_new_team: チームの追加
+        edit_account_details: アカウントの詳細
+        resources: リソース
+        collaborate: コラボする
+        integrations: 統合アプリ
+        developers: 開発者
+        your_account: あなたのアカウント
+        team: チーム
+        team_settings: チームの設定
+
+  breadcrumbs:
+    your_dashboard: あなたのダッシュボード
+    actions:
+      edit: '編集'
+      new: '新規'
+
+  fields:
+    date_field:
+      apply: 適用
+      cancel: 削除
+
+  layouts:
+
+    application:
+      raise: アプリケーションレイアウトを使っていないはずです。
+
+    mailer:
+      trouble: 上のボタンが上手く動かないなら、下記のURLをコピーし、ブラウザーにペイストしてください。
+      all_rights_reserved: "%{year}年 %{product_name}. All rights reserved."
+
+    public:
+      launch_help: 上質なSaaSプロダクトの開発につながるサポートを提供いたします
+      developed_by: 開発
+      made_with_love: 愛を込めて、こちらの地域で開発を進めています
+      location: カルフォルニア州、ロサンゼルス
+      follow_us: フォロー
+      all_rights_reserved: "%{year}年 Bullet Train(株)、 All Rights Reserved"

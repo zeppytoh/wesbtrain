@@ -1,0 +1,99 @@
+ja:
+  memberships: &memberships
+    label: &label チームメンバー
+    singular: チームメンバー
+    navigation:
+      label: *label
+      icon: fal fa-users ti ti-flag-alt
+    breadcrumbs:
+      label: *label
+    buttons: &buttons
+      edit: 設定
+      show: 詳細
+      update: 詳細を更新する
+      demote: 管理者の権限を取り消す
+      promote: 管理者にする
+      destroy: チームから外す
+      destroy_own: チーム退出する
+      reinvite: チームへ再度招待する
+      confirmations:
+        destroy: 本当に%{membership_name}を%{team_name}から外しますか？
+        destroy_own: 本当に%{team_name}から退出しますか？
+        reinvite: 本当に%{membership_name}を再び%{team_name}に招待しますか？
+    fields: &fields
+      name:
+        _: &name フルネーム
+        heading: *name
+      user_first_name:
+        name: &user_first_name 名
+        label: *user_first_name
+      user_last_name:
+        name: &user_last_name 姓
+        label: *user_last_name
+      user_profile_photo_id:
+        name: &user_profile_photo_id Profile Photo
+        label: *user_profile_photo_id
+      role_ids:
+        name: &roles Special Privileges
+        label: *roles
+        heading: *roles
+        options:
+          default:
+            label: 閲覧者
+            description: チームのデータが閲覧可能
+          admin:
+            label: 管理者
+            description: チームの管理者は料金プランを編集することと他のユーザーの権限を変えることができます。
+          editor:
+            label: 編集者
+            description: チームのデータを編集できますし、他のユーザーを編集者の権限を付与することができます。
+        none: 閲覧者
+    index:
+      section: "%{team_name}のメンバー"
+      contexts:
+        team:
+          header: チームのメンバー
+          description: あなたのチームのメンバーです。他にメンバーを招待することができます。
+          fields: *fields
+      buttons: *buttons
+    tombstones:
+      contexts:
+        team:
+          header: チームから外されたメンバー
+          description: こちらは%{team_name}から退出したメンバーの一覧なのですが、管理者によるプロフィールの編集がまだ可能ですし、 アサインされた事項を他のメンバーに付与することが可能です。
+      buttons: *buttons
+    form: &form
+      grant_privileges_of: "%{role_key}の権限を付与する"
+      buttons: *buttons
+      fields: *fields
+    edit:
+      section: "%{team_name}の%{membership_name}"
+      header: メンバーの設定を更新する
+      description: こちらで%{team_name}の%{membership_name}の設定を編集することができます。
+      grant_privileges_of: "%{role_key}の権限を付与する"
+      remove_header: メンバーを外す
+      remove_description: "%{membership_name}を外しても、そのメンバーに結び付いているリソースがそのまま残ります。代わりに同じリソースを別のメンバーに割り当てることができます。また、%{membership_name}を自分のチームへ再び招待することができます。"
+      buttons: *buttons
+    show:
+      section: "%{membership_name}の%{team_name}でのメンバーシップ"
+      header: メンバーの詳細
+      invitation_header: 招待の詳細
+      tombstone_header: チームから外されたメンバー
+      description: こちらは%{membership_name}の%{team_name}での詳細です。
+      buttons: *buttons
+      fields: *fields
+    notifications:
+      updated: メンバーは更新されました。
+      destroyed: そのユーザーはチームから外されました。
+      no_members: 他のメンバーはまだいません！誰かを招待してチームメンバーを増やしましょう。
+      cant_demote: 申し訳ございませんが、最後の管理者の権限を編集いただけません。編集したい場合は、まず別のユーザーを管理者にしてください。
+      cant_remove: 申し訳ございませんが、最後の管理者を削除いただけません。削除したい場合は、まず別のユーザーを管理者にしてください。
+      you_removed_yourself: "%{team_name}から退出しました。"
+      reinvited: こちらのユーザーを再び自分のチームへ招待することができました。メールで招待状が届きます。
+  account:
+    memberships: *memberships
+  activerecord:
+    attributes:
+      memberships:
+        user_first_name: *user_first_name
+        user_last_name: *user_last_name

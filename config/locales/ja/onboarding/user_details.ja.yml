@@ -1,0 +1,11 @@
+# フォームのフィールドは`user.yml`と`team.yml`に入っています。
+ja:
+  onboarding: &onboarding
+    user_details:
+      buttons: &buttons
+        next: 次
+      edit:
+        header: 詳細の記入
+        buttons: *buttons
+  account:
+    onboarding: *onboarding

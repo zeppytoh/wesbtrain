@@ -1,0 +1,16 @@
+ja:
+  application:
+    name: We Sanbi
+    owner: CALM
+    description: "こちらの詳細を`config/locales/ja/application.ja.yml`で編集いただけます。"
+    keywords: we sanbi seo keywords
+    support_email: ""
+    key: we_sanbi
+  webhooks/outgoing/endpoints:
+    fields:
+      api_version:
+        options:
+          1: V1
+          # 🚅 super scaffolding will insert new api versions above this line.
+  global:
+    optional: (任意)  

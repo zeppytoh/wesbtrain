@@ -1,0 +1,13 @@
+# フォームのフィールドは`user.yml`と`team.yml`に入っています。
+ja:
+  onboarding: &onboarding
+    user_email:
+      buttons: &buttons
+        next: 次
+      edit:
+        header: メールアドレスを教えてください
+        description: ログインするのに使われたアカウントでメールアドレスを取得できませんでした。
+        email_taken: 申し訳ございませんが、このメールアドレスはもう既に別のアカウントで登録済みです。まずは自分のメールとパスワードでログインし、アカウント設定で新規のアカウントを登録することをお勧めします。
+        buttons: *buttons
+  account:
+    onboarding: *onboarding

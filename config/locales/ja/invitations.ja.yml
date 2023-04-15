@@ -1,0 +1,70 @@
+ja:
+  invitations: &invitations
+    label: &label Invitations
+    breadcrumbs:
+      label: *label
+    buttons: &buttons
+      new: 新しいメンバーを招待する
+      create: 招待状を作成する
+      update: 招待状の更新
+      destroy: キャンセル
+      join_team: '%{team_name}に入る'
+      logout: 'ログアウト'
+      confirmations:
+        destroy: '%{invitation_name}を削除しても本当によろしいですか？招待状は無効になります。一旦消された招待状を元に戻すことができません。'
+    fields: &fields
+      email:
+        name: &email Email Address
+        label: *email
+        heading: *email
+      roles: &role_ids
+        name: &roles Special Privileges
+        label: *roles
+        heading: *roles
+      role_ids: *role_ids
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        name: &created_at Sent
+        heading: *created_at
+    index:
+      section: "%{team_name}の招待状"
+      header: チームのメンバーの招待状
+      description: 下記の招待状を送信しました。
+      fields: *fields
+      buttons: *buttons
+    show:
+      join_team: '%{team_name}に入る'
+      header: チームの招待状
+      has_invited: "%{team_name}への招待状は<b>%{user_name}</b>より送信されました。"
+      alert: "This invitation was emailed to <b>%{invitation_email}</b>, but you're currently signed in as <b>%{user_email}</b>."
+      you_can: "You can either:"
+      accept_the_invitation: "Accept the invitation below and you'll join the team as <b>%{user_email}</b>."
+      sign_out: "Sign out below, re-click the link in your email, and either sign into another account or create a new account."
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      invite_as: 'Invite as %{role_key}'
+      buttons: *buttons
+    new:
+      section: New Invitation for %{team_name}
+      header: New Invitation Details
+      description: We'll email them a link where they can sign up to join your team.
+      form: *form
+    notifications:
+      edit_message: We don't support editing invitations because it introduces security problems. Please remove and recreate them.
+      welcome: '%{team_name}へようこそ！'
+      created: '招待状は作成されました。'
+      updated: '招待状は更新されました。'
+      destroyed: '招待状は削除されました。'
+      doesnt_exist: 申し訳ございませんが、招待状は見つかりませんでした。管理者に連絡し、再度招待状を送っていただくようお申し付けください。
+    values:
+      name: '%{team_name}への招待状'
+  account:
+    invitations: *invitations
+  activerecord:
+    attributes:
+      invitation:
+        email: *email
+        role_ids: *roles
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at

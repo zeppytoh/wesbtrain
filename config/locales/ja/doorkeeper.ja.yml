@@ -1,0 +1,152 @@
+en:
+  activerecord:
+    attributes:
+      platform/application:
+        name: '名前'
+        redirect_uri: 'リダイレクトURI'
+    errors:
+      models:
+        platform/application:
+          attributes:
+            redirect_uri:
+              fragment_present: 'cannot contain a fragment.'
+              invalid_uri: '正当なURIにしなければなりません。'
+              unspecified_scheme: 'スキーマを特定しなければなりません。'
+              relative_uri: '絶対URIにしなければなりません。'
+              secured_uri: 'HTTPS/SSLのURIにしなければなりません。'
+              forbidden_uri: 'はサーバーが禁止しています。'
+            scopes:
+              not_match_configured: "は「read」、「write」、または「delete」の文字列しか使えません。空欄のままにしても大丈夫です。"
+
+  platform:
+    applications:
+      confirmations:
+        destroy: '本当によろしいですか？'
+      buttons:
+        edit: '編集'
+        destroy: '削除'
+        submit: '送信'
+        cancel: 'キャンセル'
+        authorize: '認証する'
+      form:
+        error: 'おっと！フォームにはエラーがないか一度確かめてください。'
+      help:
+        confidential: 'Application will be used where the client secret can be kept confidential. Native mobile apps and Single Page Apps are considered non-confidential.'
+        redirect_uri: 'URIごとに一行を使ってください。'
+        blank_redirect_uri: "Leave it blank if you configured your provider to use Client Credentials, Resource Owner Password Credentials or any other grant type that doesn't require redirect URI."
+        scopes: 'Separate scopes with spaces. Leave blank to use the default scope.'
+      edit:
+        title: 'アプリケーションを編集する'
+      index:
+        title: 'マイ・アプリケーション'
+        new: '新規アプリケーション'
+        name: '名前'
+        callback_url: 'コールバックURL'
+        confidential: '機密情報？'
+        actions: 'アクション'
+        confidentiality:
+          'yes': 'はい'
+          'no': 'いいえ'
+      new:
+        title: '新規アプリケーション'
+      show:
+        title: 'アプリケーション：%{name}'
+        application_id: 'UID'
+        secret: '秘密'
+        secret_hashed: '秘密はハッシュされました。'
+        scopes: 'スコープ'
+        confidential: '機密情報'
+        callback_urls: 'コールバックのURL'
+        actions: 'アクション'
+        not_defined: '定義されていません'
+
+  doorkeeper:
+    authorizations:
+      buttons:
+        authorize: '認証する'
+        deny: '認証しない'
+      error:
+        title: 'エラーが発生しました'
+      new:
+        title: '認証が必要です'
+        prompt: 'あなたのアカウントが使えるように%{client_name}を認証しますか？'
+        able_to: 'このアプリケーションでできることは'
+      show:
+        title: '認証コード'
+
+    authorized_applications:
+      confirmations:
+        revoke: '本当によろしいですか？'
+      buttons:
+        revoke: '取り消す'
+      index:
+        title: '認証されたアプリケーション'
+        application: 'アプリケーション'
+        created_at: '作成日'
+        date_format: '%Y-%m-%d %H:%M:%S'
+
+    pre_authorization:
+      status: 'Pre-authorization'
+
+    errors:
+      messages:
+        # Common error messages
+        invalid_request:
+          unknown: 'The request is missing a required parameter, includes an unsupported parameter value, or is otherwise malformed.'
+          missing_param: 'Missing required parameter: %{value}.'
+          not_support_pkce: 'Invalid code_verifier parameter. Server does not support pkce.'
+          request_not_authorized: 'Request need to be authorized. Required parameter for authorizing request is missing or invalid.'
+        invalid_redirect_uri: "The requested redirect uri is malformed or doesn't match client redirect URI."
+        unauthorized_client: 'The client is not authorized to perform this request using this method.'
+        access_denied: 'The resource owner or authorization server denied the request.'
+        invalid_scope: 'The requested scope is invalid, unknown, or malformed.'
+        invalid_code_challenge_method: 'The code challenge method must be plain or S256.'
+        server_error: 'The authorization server encountered an unexpected condition which prevented it from fulfilling the request.'
+        temporarily_unavailable: 'The authorization server is currently unable to handle the request due to a temporary overloading or maintenance of the server.'
+
+        # Configuration error messages
+        credential_flow_not_configured: 'Resource Owner Password Credentials flow failed due to Doorkeeper.configure.resource_owner_from_credentials being unconfigured.'
+        resource_owner_authenticator_not_configured: 'Resource Owner find failed due to Doorkeeper.configure.resource_owner_authenticator being unconfigured.'
+        admin_authenticator_not_configured: 'Access to admin panel is forbidden due to Doorkeeper.configure.admin_authenticator being unconfigured.'
+
+        # Access grant errors
+        unsupported_response_type: '認証サーバーはこのレスポンスをサポートしていません。'
+
+        # Access token errors
+        invalid_client: 'Client authentication failed due to unknown client, no client authentication included, or unsupported authentication method.'
+        invalid_grant: 'The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.'
+        unsupported_grant_type: 'The authorization grant type is not supported by the authorization server.'
+
+        invalid_token:
+          revoked: "The access token was revoked"
+          expired: "The access token expired"
+          unknown: "The access token is invalid"
+        revoke:
+          unauthorized: "このトークンを無効にできる権限は付与されていません。"
+
+    flash:
+      applications:
+        create:
+          notice: 'アプリケーションは作成されました。'
+        destroy:
+          notice: 'アプリケーションは削除されました。'
+        update:
+          notice: 'アプリケーションは更新されました。'
+      authorized_applications:
+        destroy:
+          notice: 'アプリケーションは無効にされました。'
+
+    layouts:
+      admin:
+        title: 'Doorkeeper'
+        nav:
+          oauth2_provider: 'OAuth2プロバイダー'
+          applications: 'アプリケーション'
+          home: 'ホーム'
+      application:
+        title: 'OAuthによる認証が必要です。'
+
+    scopes:
+      delete: "Your OAuth application is missing the 'delete' scope to access this API method."
+      read: "Your OAuth application is missing the 'read' scope to access this API method."
+      write: "Your OAuth application is missing the 'write' scope to access this API method."

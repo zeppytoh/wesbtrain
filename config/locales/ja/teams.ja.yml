@@ -1,0 +1,92 @@
+ja:
+  teams: &teams
+    label: &label チーム
+    singular: チーム
+    breadcrumbs:
+      label: *label
+      team_settings: チームの設定
+      dashboard: ダッシュボード
+    navigation:
+      label: チーム
+    buttons: &buttons
+      new: チームを追加する
+      create: チームを作成する
+      edit: チームを編集する
+      update: チームを保存する
+    index:
+      section: チーム
+      header: あなたのチーム
+      create: チームを追加する
+      buttons: *buttons
+    show:
+      header: '%{team_name}のダッシュボード'
+    new:
+      header: チームを追加する
+      former_user_header: チームに入る
+      default_team_name: あなたのチーム
+      buttons: *buttons
+      you_can: "チームに入るにはいくつかの方法があります"
+      invitation_header: 招待を受け取る
+      logout_header: このアカウントからログアウトする
+      new_team_header: チームを追加する
+      alert: <b>%{user_email}</b>のアカウントは現在どのチームにもぞくしていません。
+      invitation: もしチームに入るための招待状がメールで届いた場合、そちらのリンクをクリックすることでチームに入れます。
+      log_out: このアカウントからログアウトし、チームに属してい別のアカウントにログインすることができます。
+      new_team: こちらのフォームで自分のチームを作成いただけます。
+    edit:
+      section: '%{team_name}'
+      header: チームの詳細を編集する
+      description: こちらでチームの詳細と設定を編集いただけます。
+    notifications:
+      created: チームは作成されました。
+      updated: チームは更新されました。
+      invitation_only: チームを作成できるのは早期アクセスへ招待されたメンバーのみとなっています。早期アクセス用のリンクがメールで届いた場合、そちらのリンクにアクセスし、再度お試しください。
+    form:
+      buttons: *buttons
+    fields: &fields
+      id:
+        _: &id チームのID
+        label: *id
+        heading: *id
+      name:
+        _: &name チーム名
+        label: *name
+        heading: チーム
+      time_zone:
+        _: &time_zone 第一タイムゾーン
+        label: "第一タイムゾーン"
+        heading: *time_zone
+      locale:
+        _: &locale 言語
+        label: "第一言語"
+        heading: *locale
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at 登録日
+        heading: *created_at
+      updated_at:
+        _: &updated_at 更新日
+        heading: *updated_at
+    _: &self
+      name:
+        label: あなたのチーム名
+    self:
+      <<: [*self, *fields]
+    api:
+      actions: "チームのアクション"
+      index: "チームの一覧"
+      create: "チームを追加する"
+      show: "チームの一覧を表示する"
+      update: "チームを更新する"
+      fields: *fields
+  account:
+    teams: *teams
+  activerecord:
+    attributes:
+      team:
+        name: *name
+        time_zone: *time_zone
+        locale: *locale
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
