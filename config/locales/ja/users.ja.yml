@@ -1,108 +1,109 @@
 ja:
   users: &users
-    label: &label Users
+    label: &label ユーザー
     breadcrumbs:
       label: *label
     buttons: &buttons
-      update_profile: Update Profile
-      update_password: Update Password
+      update_profile: プロフィールの更新
+      update_password: パスワードの更新
     edit:
-      section: "%{users_possessive} Profile"
+      section: "%{user_name}のプロフィール"
       profile:
-        header: Update Your Profile
-        description: You can update the email address where you'll receive notifications and also update the way your name is displayed.
+        header: プロフィールを更新する
+        description: 自分のメールアドレス、または自分の名前を編集いただけます。
       password:
-        header: Update Your Password
+        header: パスワードを編集する
       two_factor:
-        header: Two-Factor Authentication
-        description_enabled: 2FA is currently enabled for your account.
-        description_disabled: You can increase the security of your account by enabling two-factor authentication.
-        verification_fail: Verification failed. You can try enabling again. Please make sure you scan the new QR code with your Authenticator app.
-        verification_success: Success! Thanks for verifying. 2FA is now enabled. 
-        warning: "In order to enable two-factor authentication, you <strong>must</strong> install an Authenticator app and <strong>enter your Verification Code from the app below</strong>. 2FA will not be enabled until you do so. This is to avoid you getting locked out of your account."
-        instructions: "Install <a href='https://authy.com/download/' target='_blank'>Authy</a> or <a href='https://support.google.com/accounts/answer/1066447'>Google Authentication</a> on your phone and scan the barcode displayed below."
-        recovery_codes: "You can also make a copy of the following recovery codes. Each one can help you get back into your account once should you lose access to the device you're using for two-factor authentication."
+        header: ２段階認証
+        description_enabled: ２段階認証は有効になっています。
+        description_disabled: ２段階認証を有効にすることでアカウントのセキュリティを向上できます。
+        verification_fail: 認証が失敗しました。２段階認証をもう一度有効にしてください。新しいQRコードを認証アプリでスキャンしてください。
+        verification_success: 成功しました！認証していただき、ありがとうございます。２段階認証は有効になっています。
+        warning: "２段階認証を有効にするには、認証のアプリを<strong>インストールしなければなりません</strong>。また、</strong>そのアプリに表示されるコードをこちらの欄に</strong>ご記入ください。そうするまでは２段階認証は有効になりません。アカウントに入れないことを防ぐためです。"
+        instructions: "<a href='https://authy.com/download/' target='_blank'>Authy</a>、または<a href='https://support.google.com/accounts/answer/1066447'>Google Authentication</a>を携帯にインストールし、下記のバーコードをスキャンしてください。"
+        recovery_codes: "こちらのリカバリー・コードもコピーいただけます。現在使用中の端末を紛失した場合にいずれのコードご使用いただくと、また自分のアカウントをアクセスできます。"
         buttons:
-          enable: Enable
-          disable: Disable
-          verify: Verify
+          enable: 有効にする
+          disable: 無効にする
+          verify: 認証する
       buttons: *buttons
     notifications:
-      updated: User was successfully updated.
+      updated: ユーザーは更新されました。
     fields: &fields
       id:
-        _: &id Team ID
+        _: &id チームID
         label: *id
         heading: *id
       name:
-        heading: Name
+        heading: 名前
       first_name:
-        _: &first_name First Name
+        _: &first_name 名
         label: *first_name
         heading: *first_name
       last_name:
-        _: &last_name Last Name
+        _: &last_name 姓
         label: *last_name
         heading: *last_name
       email:
-        _: &email Email Address
+        _: &email メールアドレス
         label: *email
         heading: *email
       time_zone:
-        _: &time_zone Your Time Zone
+        _: &time_zone あなたのタイムゾーン
         label: *time_zone
         heading: *time_zone
       profile_photo_id:
-        _: &profile_photo_id Profile Photo
+        _: &profile_photo_id プロフィールの写真
         label: *profile_photo_id
         heading: *profile_photo_id
       current_password:
-        label: Current Password
+        label: 現在のパスワード
       password:
-        _: &password Password
+        _: &password パスワード
         label: *password
       password_confirmation:
-        _: &password_confirmation Password Confirmation
-        label: Confirm Password
+        _: &password_confirmation パスワードの確認
+        label: パスワードを確認する
       otp_attempt:
-        _: &otp_attempt Your Verification Code
+        _: &otp_attempt あなたの認証コード
         label: *otp_attempt
         heading: *otp_attempt
       locale:
-        _: &locale Language
+        _: &locale 言語
         label: *locale
         heading: *locale
-        help: By default the interface language will adjust based on each team's language setting, but you can set a global personal preference for your account here.
+        help: デフォルトの言語はチームの設定によって決まりますが、その他の文言がどの言語で表示されるかをこちらで設定いただけます。
       # 🚅 super scaffolding will insert new fields above this line.
       created_at:
-        _: &created_at Signed Up At
+        _: &created_at 登録日
         heading: *created_at
       updated_at:
-        _: &updated_at Updated At
+        _: &updated_at 更新日
         heading: *updated_at
     # this is how we define customizations to fields for a specific namespace.
     _: &self
       email:
-        label: Your Email Address
+        label: あなたのメールアドレス
       password:
-        label: Your Password
+        label: あなたのパスワード
       first_name:
-        label: Your First Name
+        label: あなたの名前
       last_name:
-        label: Your Last Name
+        label: あなたの名字
       otp_attempt:
-        label: Two-Factor Authentication Code
-        help: You can find this in the authenticator application you configured when adding 2FA to your account.
+        label: ２段階認証
+        help: こちらは２段階認証を有効にすると認証アプリで表示されます。
+        You can find this in the authenticator application you configured when adding 2FA to your account.
     self:
       <<: [*self, *fields]
     _1: &sign_up
       password:
-        label: Set Password
+        label: パスワードを設定する
     sign_up:
       <<: [*sign_up, *self, *fields]
     _2: &update_self
       password:
-        label: New Password
+        label: 新しいパスワード
     update_self:
       <<: [*update_self, *self, *fields]
     form:
