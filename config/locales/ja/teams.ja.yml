@@ -53,8 +53,8 @@ ja:
         label: *name
         heading: チーム
       time_zone:
-        _: &time_zone 第一タイムゾーン
-        label: "第一タイムゾーン"
+        _: &time_zone 第一時間帯
+        label: "第一時間帯"
         heading: *time_zone
       locale:
         _: &locale 言語

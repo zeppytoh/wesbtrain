@@ -15,7 +15,7 @@ ja:
             こちらのボタンをクリックして%{team_name}に参加しましょう。
           </p>
       cta:
-        label: %{team_name}に参加する
+        label: "%{team_name}に参加する"
       signature:
         <<: *SIGNATURE
     welcome:

@@ -49,7 +49,7 @@ ja:
         label: *email
         heading: *email
       time_zone:
-        _: &time_zone あなたのタイムゾーン
+        _: &time_zone 時間帯
         label: *time_zone
         heading: *time_zone
       profile_photo_id:
@@ -83,17 +83,16 @@ ja:
     # this is how we define customizations to fields for a specific namespace.
     _: &self
       email:
-        label: あなたのメールアドレス
+        label: メールアドレス
       password:
-        label: あなたのパスワード
+        label: パスワード
       first_name:
-        label: あなたの名前
+        label: 名
       last_name:
-        label: あなたの名字
+        label: 姓
       otp_attempt:
         label: ２段階認証
         help: こちらは２段階認証を有効にすると認証アプリで表示されます。
-        You can find this in the authenticator application you configured when adding 2FA to your account.
     self:
       <<: [*self, *fields]
     _1: &sign_up
