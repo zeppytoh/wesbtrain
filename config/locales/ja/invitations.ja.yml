@@ -1,6 +1,6 @@
 ja:
   invitations: &invitations
-    label: &label Invitations
+    label: &label 招待状
     breadcrumbs:
       label: *label
     buttons: &buttons
@@ -11,20 +11,20 @@ ja:
       join_team: '%{team_name}に入る'
       logout: 'ログアウト'
       confirmations:
-        destroy: '%{invitation_name}を削除しても本当によろしいですか？招待状は無効になります。一旦消された招待状を元に戻すことができません。'
+        destroy: '%{invitation_name}を削除しても本当によろしいですか？招待状は無効になります。一旦消された招待状を元に戻すことはできません。'
     fields: &fields
       email:
-        name: &email Email Address
+        name: &email メールアドレス
         label: *email
         heading: *email
       roles: &role_ids
-        name: &roles Special Privileges
+        name: &roles 特権
         label: *roles
         heading: *roles
       role_ids: *role_ids
       # 🚅 super scaffolding will insert new fields above this line.
       created_at:
-        name: &created_at Sent
+        name: &created_at 送信された
         heading: *created_at
     index:
       section: "%{team_name}の招待状"
@@ -36,22 +36,22 @@ ja:
       join_team: '%{team_name}に入る'
       header: チームの招待状
       has_invited: "%{team_name}への招待状は<b>%{user_name}</b>より送信されました。"
-      alert: "This invitation was emailed to <b>%{invitation_email}</b>, but you're currently signed in as <b>%{user_email}</b>."
-      you_can: "You can either:"
-      accept_the_invitation: "Accept the invitation below and you'll join the team as <b>%{user_email}</b>."
-      sign_out: "Sign out below, re-click the link in your email, and either sign into another account or create a new account."
+      alert: "この招待状は<b>%{invitation_email}</b>に送られましたが、現在<b>%{user_email}</b>としてログイン中です。"
+      you_can: "チームに入るには："
+      accept_the_invitation: "ボタンをクリックして招待を受け取ると<b>%{user_email}</b>としてチームに入ることができます。"
+      sign_out: "ログアウトしてからメールで届いた招待状のリンクをクリックし、別のアカウントにログインするか、新しいアカウントを登録することができます。"
       fields: *fields
       buttons: *buttons
     form: &form
-      invite_as: 'Invite as %{role_key}'
+      invite_as: '%{role_key}として招待する'
       buttons: *buttons
     new:
-      section: New Invitation for %{team_name}
-      header: New Invitation Details
-      description: We'll email them a link where they can sign up to join your team.
+      section: "%{team_name}への新しい招待状"
+      header: 招待状の詳細
+      description: あなたのチームに参加できるためにリンクを送信いたします。
       form: *form
     notifications:
-      edit_message: We don't support editing invitations because it introduces security problems. Please remove and recreate them.
+      edit_message: 安全性を保証するため、招待状の編集をいただけません。招待状を削除・再発行してください。
       welcome: '%{team_name}へようこそ！'
       created: '招待状は作成されました。'
       updated: '招待状は更新されました。'
