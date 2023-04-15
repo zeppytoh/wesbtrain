@@ -240,8 +240,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.11.0)
-      devise (>= 4.9.0)
     devise-pwned_password (0.1.9)
       devise (~> 4)
       pwned (~> 2.0.0)
@@ -618,7 +616,6 @@ DEPENDENCIES
   cssbundling-rails
   debug (= 1.7.2)
   devise
-  devise-i18n
   devise-two-factor
   factory_bot_rails
   foreman
