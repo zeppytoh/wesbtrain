@@ -20,7 +20,7 @@ class ApplicationControllerTest < ActionController::TestCase
     end
 
     @actual_locales = I18n.available_locales
-    I18n.available_locales = %w[en es de]
+    I18n.available_locales = %w[en ja es de]
 
     @user = create(:onboarded_user)
   end
