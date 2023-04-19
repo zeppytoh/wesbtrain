@@ -1,0 +1,122 @@
+en:
+  songs: &songs
+    label: &label 歌
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-music
+    buttons: &buttons
+      new: 歌の新規作成
+      create: 歌を作成する
+      edit: 歌の編集
+      update: 歌の保存
+      destroy: 歌の削除
+      shorthand:
+        edit: 編集
+        destroy: 削除
+      confirmations:
+        destroy: "%{song_name}を削除してもよろしいですか？"
+    fields: &fields
+      id:
+        heading: 歌のID
+      team_id:
+        heading: チームID
+      title:
+        _: &title タイトル
+        label: *title
+        heading: *title
+      key:
+        _: &key キー
+        label: *key
+        heading: *key
+        placeholder: None
+        options:
+          c: C
+          c_sharp: C♯
+          d: D
+          d_sharp: D♯
+          e: E
+          f: F
+          f_sharp: F♯
+          g: G
+          g_sharp: G♯
+          a: A
+          a_sharp: A♯
+          b: B
+      author:
+        _: &author 作曲者
+        label: *author
+        heading: *author
+      body:
+        _: &body 歌詞
+        label: *body
+        heading: *body
+      video_url:
+        _: &video_url 動画のリンク
+        label: *video_url
+        heading: *video_url
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at 作成日
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at 更新日
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "歌のコレクションのアクション"
+      index: "歌の一覧"
+      create: "歌を作成する"
+      member_actions: "一個当ての歌のアクション"
+      show: "歌を表示する"
+      update: "歌を編集する"
+      destroy: "歌を削除する"
+      fields: *fields
+    index:
+      section: "%{team_name}の歌"
+      contexts:
+        team:
+          header: 歌の一覧
+          description: 下記は%{team_name}に追加された歌の一覧です。
+          description_empty: "%{team_name}はまだ歌が作成されていません。"
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{song_name}"
+      header: 歌の詳細
+      description: "%{song_name}の詳細は下記の通りです。"
+      manage_description: "%{song_name}を更新すること、または%{team_name}から完全に削除することもこちらで行えます。"
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "%{team_name}の新しい歌"
+      header: 新規の歌の詳細
+      description: "%{team_name}に追加したい歌の詳細をご記入ください。"
+      form: *form
+    edit:
+      section: "%{song_name}"
+      header: 歌の詳細の編集
+      description: こちらでは%{song_name}の詳細を編集いただけます。
+      form: *form
+    notifications:
+      created: 歌の作成されました。
+      updated: 歌のは更新されました。
+      destroyed: 歌は削除されました。
+  account:
+    songs: *songs
+  activerecord:
+    attributes:
+      song:
+        title: *title
+        key: *key
+        author: *author
+        body: *body
+        video_url: *video_url
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at

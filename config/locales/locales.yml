@@ -1,7 +1,7 @@
 locales: &locales
   # This is the canonical list of available languages.
+  ja: 日本語
   en: English
-  # ja: 日本語
 
 # The language labels should be the same across all locales.
 en:

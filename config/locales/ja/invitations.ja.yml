@@ -1,0 +1,70 @@
+ja:
+  invitations: &invitations
+    label: &label 招待状
+    breadcrumbs:
+      label: *label
+    buttons: &buttons
+      new: 新しいメンバーを招待する
+      create: 招待状を作成する
+      update: 招待状の更新
+      destroy: キャンセル
+      join_team: '%{team_name}に入る'
+      logout: 'ログアウト'
+      confirmations:
+        destroy: '%{invitation_name}を削除しても本当によろしいですか？招待状は無効になります。一旦消された招待状を元に戻すことはできません。'
+    fields: &fields
+      email:
+        name: &email メールアドレス
+        label: *email
+        heading: *email
+      roles: &role_ids
+        name: &roles 特権
+        label: *roles
+        heading: *roles
+      role_ids: *role_ids
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        name: &created_at 送信された
+        heading: *created_at
+    index:
+      section: "%{team_name}の招待状"
+      header: チームのメンバーの招待状
+      description: 下記の招待状を送信しました。
+      fields: *fields
+      buttons: *buttons
+    show:
+      join_team: '%{team_name}に入る'
+      header: チームの招待状
+      has_invited: "%{team_name}への招待状は<b>%{user_name}</b>より送信されました。"
+      alert: "この招待状は<b>%{invitation_email}</b>に送られましたが、現在<b>%{user_email}</b>としてログイン中です。"
+      you_can: "チームに入るには："
+      accept_the_invitation: "ボタンをクリックして招待を受け取ると<b>%{user_email}</b>としてチームに入ることができます。"
+      sign_out: "ログアウトしてからメールで届いた招待状のリンクをクリックし、別のアカウントにログインするか、新しいアカウントを登録することができます。"
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      invite_as: '%{role_key}として招待する'
+      buttons: *buttons
+    new:
+      section: "%{team_name}への新しい招待状"
+      header: 招待状の詳細
+      description: あなたのチームに参加できるためにリンクを送信いたします。
+      form: *form
+    notifications:
+      edit_message: 安全性を保証するため、招待状の編集をいただけません。招待状を削除・再発行してください。
+      welcome: '%{team_name}へようこそ！'
+      created: '招待状は作成されました。'
+      updated: '招待状は更新されました。'
+      destroyed: '招待状は削除されました。'
+      doesnt_exist: 申し訳ございませんが、招待状は見つかりませんでした。管理者に連絡し、再度招待状を送っていただくようお申し付けください。
+    values:
+      name: '%{team_name}への招待状'
+  account:
+    invitations: *invitations
+  activerecord:
+    attributes:
+      invitation:
+        email: *email
+        role_ids: *roles
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at

@@ -1,0 +1,34 @@
+ja:
+  user_mailer:
+    signature: &SIGNATURE
+      html:
+        <p>ご不明な点やご質問がございましたら、<a href="mailto:%{support_email}">こちらのメールにお問合せください</a>。</p>
+        <p>We Sanbiより</p>
+    invited:
+      subject: We Sanbiで%{team_name}さんからの招待状が届いています！
+      preview: '%{inviter_name}さんがあなたを招待しました。'
+      heading: 招待状が届いています！
+      body:
+        html:
+          <p>
+            We Sanbi%{team_name}で%{inviter_name}さんからの招待状が届きました。
+            こちらのボタンをクリックして%{team_name}に参加しましょう。
+          </p>
+      cta:
+        label: "%{team_name}に参加する"
+      signature:
+        <<: *SIGNATURE
+    welcome:
+      subject: We Sanbiへようこそ！
+      preview: このメールではWeSanbiの使い方を説明いたします。
+      heading: We Sanbiへようこそ！
+      body:
+        html:
+          <p></p>
+          <p></p>
+      cta:
+        heading: 次は？
+        body: こちらのリンクをクリックするとダッシュボードに移ります。
+        label: あなたのダッシュボード
+      signature:
+        <<: *SIGNATURE

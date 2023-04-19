@@ -1,0 +1,17 @@
+ja:
+  billing/products:
+    free:
+      name: 無料
+    basic:
+      name: 基本プラン
+      description: 無料体験を含めた月ごとのプランの例です。
+      features:
+        - チームメンバーごとの料金プランの例です。
+        - 「Creative Concept」の作成制限は50個までです。
+        - Soft enforcement that limit.
+    pro:
+      name: プロのプラン
+      description: いくつかの機能の一覧が閲覧可能な、より優れたプランの例です。
+      features:
+        - 10人のメンバーまで作成可能な定額のプランの例です。
+        - 「Creative Concept」の作成制限なし。
