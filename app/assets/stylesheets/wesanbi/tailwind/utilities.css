@@ -1,0 +1,30 @@
+@import "./utilities/billing";
+
+@layer utilities {
+  .text-2xs {
+    @apply uppercase;
+    font-size: 0.65rem;
+    line-height: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .space-y {
+    @apply space-y-5;
+  }
+
+  .space-x {
+    @apply space-x-3;
+  }
+
+  .gap-y {
+    @apply gap-y-5;
+  }
+
+  .gap-x {
+    @apply gap-x-4;
+  }
+ 
+  [hidden] {
+    display: none !important;
+  }
+}
