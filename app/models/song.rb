@@ -25,6 +25,14 @@ class Song < ApplicationRecord
     team.songs
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["team"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["author", "body", "title"]
+  end
+
   # データベースではkeyはc_sharpとかになっているのでC♯などを表示したい時はこれを使う。
   def original_key
     all_keys.dig(key.to_sym)

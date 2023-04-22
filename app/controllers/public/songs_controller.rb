@@ -1,8 +1,7 @@
 class Public::SongsController < Public::ApplicationController
-  def search
-  end
-
-  def results
+  def index
+    @q = Song.ransack(params[:q])
+    @songs = params["q"] ? @q.result : nil
   end
 
   def show
