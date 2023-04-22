@@ -1,0 +1,8 @@
+<%= render 'search', q: @q, url: songs_path %>
+
+<% if @songs %>
+  <% @songs.each do |song| %>
+    <%= song.id %>
+    <%= song.title %><br/>
+  <% end %>
+<% end %>

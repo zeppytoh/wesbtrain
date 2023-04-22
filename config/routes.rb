@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   scope module: "public" do
     # To keep things organized, we put non-authenticated controllers in the `Public::` namespace.
     # The root `/` path is routed to `Public::HomeController#index` by default.
+    get 'songs/', to: 'songs#index'
+    get 'song/:id', to: 'songs#show'
   end
 
   namespace :webhooks do
