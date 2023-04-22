@@ -56,6 +56,9 @@ gem "bootsnap", require: false
 # A natural language date/time parser.
 gem "chronic"
 
+# 検索機能
+gem "ransack"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # TODO: Remove version restriction once Ruby 3.2.2 is released.
